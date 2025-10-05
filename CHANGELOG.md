@@ -9,3 +9,7 @@
 
 ## [1.0] Data
 - v1.1 Added system utilization functions using psutil
+- v1.2: Added basic client-server data communication
+  - Implemented Flask server to serve system utilization
+  - Set up client to connect and fetch data
+
