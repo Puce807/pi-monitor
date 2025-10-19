@@ -1,6 +1,6 @@
 
 import time
-from UDP import *
+from network import *
 from utils import get_client_ip
 
 CLIENT_IP = get_client_ip()
@@ -19,4 +19,13 @@ while True:
         if cur == "1":
             print("Interface Up!")
             send_message(CLIENT_IP, 5005, "connected")
+            break
     time.sleep(1)
+
+while True:
+    time.sleep(5)
+    if not ping(CLIENT_IP, 5006):
+        print("Lost Connection, trying to connect")
+        ping(CLIENT_IP, 5006, 5)
+        print("Client disconnected, stopping program")
+        break

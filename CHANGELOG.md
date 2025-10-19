@@ -16,3 +16,6 @@
   - Added test.py in for both pi and client
   - Added UDP.py with UDP related functions
   - v.3.1: Fixed errors in client-test.py and pi-test.py
+- v1.4: Implemented ping-pong to detect connectivity
+  - Added periodic ping from pi and pong reply from client
+  - Renamed UDP.py to network.py
