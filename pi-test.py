@@ -11,6 +11,7 @@ if state == "1":
     send_message(CLIENT_IP, 5005, "connected")
 
 last = state
+print(f"Watching usb0, initial state = {last}")
 
 while True:
     cur = read_state()

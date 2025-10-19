@@ -15,3 +15,4 @@
 - v1.3: Added basic UDP communication
   - Added test.py in for both pi and client
   - Added UDP.py with UDP related functions
+  - v.3.1: Fixed errors in client-test.py and pi-test.py
