@@ -12,4 +12,6 @@
 - v1.2: Added basic client-server data communication
   - Implemented Flask server to serve system utilization
   - Set up client to connect and fetch data
-
+- v1.3: Added basic UDP communication
+  - Added test.py in for both pi and client
+  - Added UDP.py with UDP related functions

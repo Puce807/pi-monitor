@@ -1,13 +1,13 @@
 
 from flask import Flask, jsonify
-from client.utilization import get_cpu
+from client.utilization import *
 
 app = Flask(__name__)
 
 @app.route("/")
 def get_data():
 
-    data = get_cpu()
+    data = get_all()
     return jsonify(data)
 
 # Only start the server if this file is run directly
