@@ -20,3 +20,4 @@
   - Added periodic ping from pi and pong reply from client
   - Renamed UDP.py to network.py
   - v1.4.1: Fixed bug when client disconnected, 'second chance' always resulted in script stopping
+  - v1.4.2: Fixed bug where pi would not exit 1st while loop
