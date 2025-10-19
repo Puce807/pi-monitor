@@ -26,6 +26,6 @@ while True:
     time.sleep(5)
     if not ping(CLIENT_IP, 5006):
         print("Lost Connection, trying to connect")
-        ping(CLIENT_IP, 5006, 5)
-        print("Client disconnected, stopping program")
-        break
+        if not ping(CLIENT_IP, 5006, 5):
+            print("Client disconnected, stopping program")
+            break
