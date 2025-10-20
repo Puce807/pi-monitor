@@ -25,7 +25,7 @@ while True:
         if not ping(CLIENT_IP, 5006, 5):
             print(f"Client {CLIENT_IP} disconnected, terminating program")
             break
-    data = requests.get(f"{CLIENT_IP}:5000").json()
+    data = requests.get(f"http://{CLIENT_IP}:5000").json()
 
     for x, y in data["cpu"].items():
         print(f"{x}: {y}")

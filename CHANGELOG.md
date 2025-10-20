@@ -24,3 +24,4 @@
 - v1.5: Implemented Flask server communication in test scripts
   - Added flask server code as a class for graceful shutdown
   - v1.5.1: Fixed bug where a thread was started twice and fixed bug where pi would not connect to the correct IP for flask server
+  - v1.5.2: Fixed bug with address missing http://
