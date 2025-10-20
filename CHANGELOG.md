@@ -23,3 +23,4 @@
   - v1.4.2: Fixed bug where pi would not exit 1st while loop
 - v1.5: Implemented Flask server communication in test scripts
   - Added flask server code as a class for graceful shutdown
+  - v1.5.1: Fixed bug where a thread was started twice and fixed bug where pi would not connect to the correct IP for flask server

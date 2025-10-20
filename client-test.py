@@ -46,7 +46,6 @@ def handle_ping(ts):
 stop_event = threading.Event()
 flask_thread = Flask_Thread(stop_event)
 pr_thread = threading.Thread(target=ping_responder, args=(stop_event,), kwargs={"on_ping": handle_ping})
-pr_thread.start()
 
 start_listener("0.0.0.0", 5005, on_message, True)
 flask_thread.start()
