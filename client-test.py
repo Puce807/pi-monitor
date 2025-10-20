@@ -1,8 +1,7 @@
-import time
+
 import threading
 from werkzeug.serving import make_server
 from flask import Flask, jsonify
-import requests
 
 from network import *
 from client.utilization import *
@@ -38,7 +37,7 @@ def on_message(data="", addr=""):
     print(f"From {ip} on port {port}")
     pr_thread.start()
 
-last_ping_time = None
+last_ping_time = 0
 def handle_ping(ts):
     global last_ping_time
     last_ping_time = ts
@@ -51,7 +50,7 @@ start_listener("0.0.0.0", 5005, on_message, True)
 flask_thread.start()
 
 while True:
-    if last_ping_time:
+    if not last_ping_time == 0:
         elapsed = time.time() - last_ping_time
         if elapsed > 12:
             print("Lost connection with Pi. Terminating program...")
@@ -62,4 +61,4 @@ while True:
             break
         elif elapsed > 7:
             print(f"Possible Pi disconnect, waiting... ({round(elapsed,0)})")
-    time.sleep(2)
+    time.sleep(1)

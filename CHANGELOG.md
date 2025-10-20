@@ -7,7 +7,7 @@
 - v0.1 File Structure Setup
 - v0.2 Installed libraries and added `requirements.txt`
 
-## [1.0] Data
+## [1.0] Data and Basic Communication
 - v1.1 Added system utilization functions using psutil
 - v1.2: Added basic client-server data communication
   - Implemented Flask server to serve system utilization
@@ -25,3 +25,4 @@
   - Added flask server code as a class for graceful shutdown
   - v1.5.1: Fixed bug where a thread was started twice and fixed bug where pi would not connect to the correct IP for flask server
   - v1.5.2: Fixed bug with address missing http://
+  - v1.5.3: Minor additions

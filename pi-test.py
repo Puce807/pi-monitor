@@ -1,5 +1,4 @@
 
-import time
 import requests
 from network import *
 from utils import get_client_ip
@@ -20,6 +19,7 @@ while True:
     time.sleep(1)
 
 while True:
+    time.sleep(5)
     if not ping(CLIENT_IP, 5006):
         print("Lost Connection, trying to connect")
         if not ping(CLIENT_IP, 5006, 5):
@@ -29,5 +29,3 @@ while True:
 
     for x, y in data["cpu"].items():
         print(f"{x}: {y}")
-
-    time.sleep(5)
