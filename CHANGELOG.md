@@ -21,3 +21,5 @@
   - Renamed UDP.py to network.py
   - v1.4.1: Fixed bug when client disconnected, 'second chance' always resulted in script stopping
   - v1.4.2: Fixed bug where pi would not exit 1st while loop
+- v1.5: Implemented Flask server communication in test scripts
+  - Added flask server code as a class for graceful shutdown

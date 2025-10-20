@@ -45,12 +45,20 @@ def ping(ip, port, timeout=2):
     finally:
         sock.close()
 
-def ping_responder(ip="0.0.0.0", port=5006):
+def ping_responder(stop_event, ip="0.0.0.0", port=5006, on_ping=None):
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     sock.bind((ip, port))
+    sock.settimeout(1)
     print(f"Listening for pings on {ip}:{port}")
-    while True:
-        data, addr = sock.recvfrom(1024)
-        if data == b"ping":
-            sock.sendto(b"pong", addr)
-            print(f"Replied to ping from {addr[0]}")
+    while not stop_event.is_set():
+        try:
+            data, addr = sock.recvfrom(1024)
+            if data == b"ping":
+                sock.sendto(b"pong", addr)
+                print(f"Replied to ping from {addr[0]}")
+        except socket.timeout:
+            continue
+        if on_ping:
+            on_ping(time.time())
+
+    sock.close()

@@ -1,5 +1,6 @@
 
 import time
+import requests
 from network import *
 from utils import get_client_ip
 
@@ -19,9 +20,14 @@ while True:
     time.sleep(1)
 
 while True:
-    time.sleep(5)
     if not ping(CLIENT_IP, 5006):
         print("Lost Connection, trying to connect")
         if not ping(CLIENT_IP, 5006, 5):
-            print("Client disconnected, stopping program")
+            print(f"Client {CLIENT_IP} disconnected, terminating program")
             break
+    data = requests.get("http://127.0.0.1:5000").json()
+
+    for x, y in data["cpu"].items():
+        print(f"{x}: {y}")
+
+    time.sleep(5)
