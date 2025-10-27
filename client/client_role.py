@@ -39,3 +39,4 @@ def run_client():
             break
         elif elapsed > 7:
             print(f"Possible Pi disconnect, waiting... ({round(elapsed, 0)})")
+            time.sleep(1)

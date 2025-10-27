@@ -29,3 +29,7 @@
 - v1.6: Refactored code to be run from main.py
   - Added automatic role assignment
   - Moved code from test scripts into pi/ and client/
+  - v1.6.1: Bug Fixes and Additions
+    - Added warnings for not using a pi zero 2
+    - Added sleep between "possible Pi disconnect" message
+    - Fixed error when flask server did not setup route

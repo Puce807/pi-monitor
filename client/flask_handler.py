@@ -11,6 +11,7 @@ class FlaskThread(threading.Thread):
         super().__init__(daemon=True)
         self.stop_event = Fstop_event
         self.app = Flask(__name__)
+        self.setup()
         self.server = make_server("0.0.0.0", DATA_PORT, self.app)
         self.ctx = self.app.app_context()
         self.ctx.push()

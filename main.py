@@ -8,6 +8,10 @@ if __name__ == "__main__":
     if ROLE == "auto":
         if is_pi():
             ROLE = "pi"
+            with open('/sys/firmware/devicetree/base/model', 'r') as file:
+                content = file.read()
+                if not "Raspberry Pi Zero" in content:
+                    print("WARNING: It is recommended to use a RPi Zero")
         else:
             ROLE = "client"
     elif ROLE != "pi":
