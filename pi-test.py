@@ -1,7 +1,6 @@
 
 import requests
 from network import *
-from utils import get_client_ip
 
 CLIENT_IP = get_client_ip()
 

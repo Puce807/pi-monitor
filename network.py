@@ -49,7 +49,7 @@ def ping_responder(stop_event, ip="0.0.0.0", port=5006, on_ping=None):
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     sock.bind((ip, port))
     sock.settimeout(1)
-    print(f"Listening for pings on {ip}:{port}")
+    print(f"\nListening for pings on {ip}:{port}")
     while not stop_event.is_set():
         try:
             data, addr = sock.recvfrom(1024)
@@ -62,3 +62,13 @@ def ping_responder(stop_event, ip="0.0.0.0", port=5006, on_ping=None):
             on_ping(time.time())
 
     sock.close()
+
+def get_client_ip(interface="usb0"):
+    import subprocess
+    result = subprocess.run(["arp", "-i", interface, "-n"], capture_output=True, text=True)
+    for line in result.stdout.splitlines():
+        if "ether" in line and interface in line:
+            parts = line.split()
+            if len(parts) >= 1 and parts[0].startswith("10."):
+                return parts[0]
+    return None

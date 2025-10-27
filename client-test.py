@@ -1,4 +1,5 @@
 
+import requests
 import threading
 from werkzeug.serving import make_server
 from flask import Flask, jsonify
@@ -30,6 +31,12 @@ class Flask_Thread(threading.Thread):
     def shutdown(self):
         print("Terminating flask server...")
         self.stop_event.set()
+        try:
+            requests.get("http://127.0.0.1:5000")
+        except requests.RequestException as e:
+            print(f"Warning: could not send unblock request — {e}")
+        else:
+            print("Unblock request sent successfully.")
 
 def on_message(data="", addr=""):
     ip, port = addr
