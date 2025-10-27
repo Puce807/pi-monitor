@@ -28,5 +28,5 @@ def run_pi():
                 print(f"Client ({CLIENT_IP}) disconnected, terminating program")
                 break
         data = requests.get(f"http://{CLIENT_IP}:{DATA_PORT}").json()
-        for x, y in data["cpu"]:
+        for x, y in data["cpu"].items():
             print(f"{x}: {y}")
