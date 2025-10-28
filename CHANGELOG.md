@@ -7,7 +7,7 @@
 - v0.1 File Structure Setup
 - v0.2 Installed libraries and added `requirements.txt`
 
-## [1.0] Data and Basic Communication
+## [1.0] Data and Communication
 - v1.1 Added system utilization functions using psutil
 - v1.2: Added basic client-server data communication
   - Implemented Flask server to serve system utilization
@@ -38,3 +38,4 @@
   - Automatically pull from github if there is a new commit
   - If config values differ from pi and client, either match or raise error
   - Deleted original test scripts
+  - v1.7.1: Fixed bug where UDP message was not encoded correctly

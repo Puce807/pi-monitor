@@ -2,6 +2,7 @@
 import os
 import socket
 import time
+import json
 
 def read_state(IFACE="usb0"):
     try:
@@ -14,7 +15,7 @@ def send_message(IP, PORT, MESSAGE):
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     try:
         if isinstance(MESSAGE, str):
-            MESSAGE = MESSAGE.encode()
+            MESSAGE = json.dumps(MESSAGE).encode()  # convert tuple → JSON string → bytes
         sock.sendto(MESSAGE, (IP, PORT))
     finally:
         sock.close()
@@ -28,6 +29,7 @@ def start_listener(ip, port, callback, stop):
     i = 0
     while i < stop:
         data, addr = sock.recvfrom(1024)
+        decoded = json.loads(data.decode())
         callback(data.decode(), addr)
         i += 1
 
