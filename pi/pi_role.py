@@ -4,7 +4,15 @@ import requests
 from config import *
 from network import *
 
+def on_message(data="", addr=""):
+    ip, port = addr
+    if data == "MISSMATCH":
+        raise ValueError("Config Values Do Not Match Client's")
+
 def run_pi():
+
+    config_vals = UDP_PORT, PING_PORT, DATA_PORT
+
     CLIENT_IP = get_client_ip()
 
     # Check if usb is working
@@ -15,9 +23,12 @@ def run_pi():
         cur = read_state()
         if cur == "1":
             print("USB Up, Connected")
-            send_message(CLIENT_IP, UDP_PORT, "connected")
+            send_message(CLIENT_IP, UDP_PORT, ("MSG","connected"))
             break
         time.sleep(1)
+
+    send_message(CLIENT_IP, UDP_PORT, ("DATA", config_vals))
+    start_listener(CLIENT_IP, UDP_PORT, on_message, 1)
 
     # Main loop
     while True:

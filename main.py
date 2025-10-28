@@ -1,17 +1,21 @@
 
 from config import *
-from utils import is_pi
+from utils import *
 from client.client_role import run_client
 from pi.pi_role import run_pi
 
 if __name__ == "__main__":
+    update_git()
+
     if ROLE == "auto":
-        if is_pi():
+        val, path = is_pi()
+        if val:
             ROLE = "pi"
-            with open('/sys/firmware/devicetree/base/model', 'r') as file:
-                content = file.read()
-                if not "Raspberry Pi Zero" in content:
-                    print("WARNING: It is recommended to use a RPi Zero")
+            if path:
+                with open('/sys/firmware/devicetree/base/model', 'r') as file:
+                    content = file.read()
+                    if not "Raspberry Pi Zero" in content:
+                        print("WARNING: It is recommended to use a RPi Zero")
         else:
             ROLE = "client"
     elif ROLE != "pi":

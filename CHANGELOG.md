@@ -33,3 +33,8 @@
     - Added warnings for not using a pi zero 2
     - Added sleep between "possible Pi disconnect" message
     - Fixed error when flask server did not setup route
+  - v1.6.2: Fixed bug where pi would not print flask data
+- v1.7: Auto git updating and config synchronisation
+  - Automatically pull from github if there is a new commit
+  - If config values differ from pi and client, either match or raise error
+  - Deleted original test scripts

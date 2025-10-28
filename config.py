@@ -11,3 +11,4 @@ POLLING_RATE = 3 # How often the Pi pings and fetches information from the clien
 
 # --- Client ---
 
+RESOLVE_MISSMATCH = False # If config values differ, automatically make them the same
