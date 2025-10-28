@@ -41,3 +41,4 @@
   - v1.7.1: Fixed bug where UDP message was not encoded correctly
   - v1.7.2: Fixed bug where tuples would not be encoded correctly
   - v1.7.3: Fixed bug where tuples would not be encoded correctly #2
+  - v1.7.4: Added debug to help fix bugs

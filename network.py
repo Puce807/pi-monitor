@@ -24,13 +24,14 @@ def start_listener(ip, port, callback, stop):
     # Stop = amount of time script will loop until terminating
     import socket
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    print((ip, port))
     sock.bind((ip, port))
     print(f"Listening on {ip}:{port}...")
     i = 0
     while i < stop:
         data, addr = sock.recvfrom(1024)
         decoded = json.loads(data.decode())
-        callback(data.decode(), addr)
+        callback(decoded, addr)
         i += 1
 
 def ping(ip, port, timeout=2):
