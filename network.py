@@ -15,7 +15,7 @@ def send_message(IP, PORT, MESSAGE):
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     try:
         if not isinstance(MESSAGE, (bytes, bytearray)):
-            MESSAGE = json.dumps(MESSAGE).encode()
+            MESSAGE = json.dumps(MESSAGE).encode('utf-8')
         sock.sendto(MESSAGE, (IP, PORT))
     finally:
         sock.close()
@@ -30,7 +30,7 @@ def start_listener(ip, port, callback, stop):
     while i < stop:
         data, addr = sock.recvfrom(1024)
         decoded = json.loads(data.decode())
-        callback(decoded, addr)
+        callback(data.decode(), addr)
         i += 1
 
 def ping(ip, port, timeout=2):
