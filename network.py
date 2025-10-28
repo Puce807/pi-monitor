@@ -14,8 +14,8 @@ def read_state(IFACE="usb0"):
 def send_message(IP, PORT, MESSAGE):
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     try:
-        if isinstance(MESSAGE, str):
-            MESSAGE = json.dumps(MESSAGE).encode()  # convert tuple → JSON string → bytes
+        if not isinstance(MESSAGE, (bytes, bytearray)):
+            MESSAGE = json.dumps(MESSAGE).encode()
         sock.sendto(MESSAGE, (IP, PORT))
     finally:
         sock.close()
@@ -30,7 +30,7 @@ def start_listener(ip, port, callback, stop):
     while i < stop:
         data, addr = sock.recvfrom(1024)
         decoded = json.loads(data.decode())
-        callback(data.decode(), addr)
+        callback(decoded, addr)
         i += 1
 
 def ping(ip, port, timeout=2):
