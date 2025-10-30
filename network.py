@@ -12,6 +12,7 @@ def read_state(IFACE="usb0"):
         return "0"
 
 def send_message(IP, PORT, MESSAGE):
+    print(f"Sending message {MESSAGE} to {IP}:{PORT}")
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     try:
         if not isinstance(MESSAGE, (bytes, bytearray)):

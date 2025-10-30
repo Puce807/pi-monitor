@@ -27,6 +27,7 @@ def run_pi():
             break
         time.sleep(1)
 
+    print("Sending Message...")
     send_message(CLIENT_IP, UDP_PORT, ("DATA", config_vals))
     print(f"Client IP: {CLIENT_IP}")
     print(f"UDP Port: {UDP_PORT}")
