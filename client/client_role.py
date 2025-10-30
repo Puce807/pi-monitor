@@ -6,7 +6,6 @@ from client.flask_handler import FlaskThread
 from client.ping_handler import PingHandler
 
 def on_message(data="", addr=""):
-    print(data)
     ip, port = addr
     typ, content = data
     if typ == "MSG":

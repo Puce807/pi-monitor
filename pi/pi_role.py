@@ -28,7 +28,9 @@ def run_pi():
         time.sleep(1)
 
     send_message(CLIENT_IP, UDP_PORT, ("DATA", config_vals))
-    start_listener(CLIENT_IP, UDP_PORT, on_message, 1)
+    print(f"Client IP: {CLIENT_IP}")
+    print(f"UDP Port: {UDP_PORT}")
+    start_listener("0.0.0.0", UDP_PORT, on_message, 1)
 
     # Main loop
     while True:
