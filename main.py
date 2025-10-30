@@ -5,7 +5,9 @@ from client.client_role import run_client
 from pi.pi_role import run_pi
 
 if __name__ == "__main__":
-    update_git()
+
+    if update_git(): update_git()
+    ROLE, POLLING_RATE, TIMEOUT = validate_config(ROLE, POLLING_RATE, TIMEOUT)
 
     if ROLE == "auto":
         val, path = is_pi()

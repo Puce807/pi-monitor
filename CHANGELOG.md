@@ -44,3 +44,7 @@
   - v1.7.4: Added debug to help fix bugs
   - v1.7.5 + .6: Added further debug to help fix bugs
   - v1.7.7: Fixed error where client would not send success message to pi so pi would never move onto main loop
+- v.1.8: Config validation and client auto-reconnect
+  - Added more values to config
+  - Added config validation
+  - Client automatically starts listener again and closes threads after pi disconnect
