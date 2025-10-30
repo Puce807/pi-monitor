@@ -42,4 +42,5 @@
   - v1.7.2: Fixed bug where tuples would not be encoded correctly
   - v1.7.3: Fixed bug where tuples would not be encoded correctly #2
   - v1.7.4: Added debug to help fix bugs
-  - v1.7.5: Added further debug to help fix bugs
+  - v1.7.5 + .6: Added further debug to help fix bugs
+  - v1.7.7: Fixed error where client would not send success message to pi so pi would never move onto main loop

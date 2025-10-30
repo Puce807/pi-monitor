@@ -1,6 +1,7 @@
 
 import time
 import config
+from config import UDP_PORT
 from network import start_listener, send_message
 from client.flask_handler import FlaskThread
 from client.ping_handler import PingHandler
@@ -15,9 +16,13 @@ def on_message(data="", addr=""):
         if not (config.UDP_PORT == piUDP and config.PING_PORT == piPING and config.DATA_PORT == piDATA):
             if config.RESOLVE_MISSMATCH:
                 config.UDP_PORT, config.PING_PORT, config.DATA_PORT = piUDP, piPING, piDATA
+                print("Config missmatch resolved")
             else:
-                send_message(ip, port, "MISSMATCH")
+                send_message(ip, 5007, "MISSMATCH")
                 raise ValueError("Config Values Do Not Match Pi's")
+        else:
+            print("Config matches pi")
+            send_message(ip, 5007, "SUCCESS")
 
 def run_client():
     ping = PingHandler()

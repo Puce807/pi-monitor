@@ -8,6 +8,8 @@ def on_message(data="", addr=""):
     ip, port = addr
     if data == "MISSMATCH":
         raise ValueError("Config Values Do Not Match Client's")
+    elif data == "SUCCESS":
+        print("Config values match client's")
 
 def run_pi():
 
@@ -31,7 +33,7 @@ def run_pi():
     send_message(CLIENT_IP, UDP_PORT, ("DATA", config_vals))
     print(f"Client IP: {CLIENT_IP}")
     print(f"UDP Port: {UDP_PORT}")
-    start_listener("0.0.0.0", UDP_PORT, on_message, 1)
+    start_listener("0.0.0.0", 5007, on_message, 1) # Port is not configurable as it always must be the same as client
 
     # Main loop
     while True:
