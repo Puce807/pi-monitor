@@ -16,12 +16,3 @@ class Renderer:
         draw.text(self.layout.hello_label, "Hello World!", font=self.font, fill=0)
 
         return img
-
-if __name__ == "__main__":
-    display = EInkDisplay()
-    renderer = Renderer
-    display.show_image(image=renderer.render)
-    display.sleep()
-    try: pass
-    except KeyboardInterrupt:
-        display.clear()

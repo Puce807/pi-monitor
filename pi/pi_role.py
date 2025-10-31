@@ -1,6 +1,8 @@
 
 import requests
-
+from display.eink import EInkDisplay
+from display.layout import Layout
+from display.renderer import Renderer
 from config import *
 from network import *
 
@@ -35,6 +37,11 @@ def run_pi():
     print(f"UDP Port: {UDP_PORT}")
     start_listener("0.0.0.0", 5007, on_message, 1) # Port is not configurable as it always must be the same as client
 
+    display = EInkDisplay()
+    renderer = Renderer
+    display.show_image(image=renderer.render)
+    display.sleep()
+
     # Main loop
     while True:
         time.sleep(POLLING_RATE)
@@ -46,3 +53,7 @@ def run_pi():
         data = requests.get(f"http://{CLIENT_IP}:{DATA_PORT}").json()
         for x, y in data["cpu"].items():
             print(f"{x}: {y}")
+        try:
+            pass
+        except KeyboardInterrupt:
+            display.clear()
