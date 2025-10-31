@@ -1,7 +1,6 @@
 
-from eink import EInkDisplay
 from PIL import Image, ImageDraw, ImageFont
-from layout import Layout
+from pi.layout import Layout
 from config import *
 
 class Renderer:
