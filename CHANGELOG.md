@@ -59,3 +59,4 @@
   - v2.1.2: Moved test code into pi_role.py
   - v2.1.3: Fixed error where display module was incorrectly imported
   - v2.1.4: Moved display files into pi/
+  - v2.1.5: Added debug
