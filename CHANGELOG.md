@@ -55,3 +55,4 @@
   - Added pi/display folder
   - Added eink.py, layout.py and renderer.py
   - Added simple script which displays "hello world"
+  - v2.1.1: Fixed config importing error
