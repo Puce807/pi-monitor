@@ -1,8 +1,8 @@
 
 import requests
-from display.eink import EInkDisplay
-from display.layout import Layout
-from display.renderer import Renderer
+from pi.display.eink import EInkDisplay
+from pi.display.layout import Layout
+from pi.display.renderer import Renderer
 from config import *
 from network import *
 

@@ -57,3 +57,4 @@
   - Added simple script which displays "hello world"
   - v2.1.1: Fixed config importing error
   - v2.1.2: Moved test code into pi_role.py
+  - v2.1.3: Fixed error where display module was incorrectly imported
