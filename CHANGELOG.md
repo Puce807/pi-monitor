@@ -48,3 +48,10 @@
   - Added more values to config
   - Added config validation
   - Client automatically starts listener again and closes threads after pi disconnect
+
+## [2.0] Display
+- v2.1: Initial display code
+  - Added assets folder
+  - Added pi/display folder
+  - Added eink.py, layout.py and renderer.py
+  - Added simple script which displays "hello world"

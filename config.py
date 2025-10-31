@@ -15,6 +15,12 @@ DATA_PORT = 5000 # Port used by the flask server
 
 POLLING_RATE = 3 # How often the Pi pings and fetches information from the client
 
+# --- Display ---
+
+FONT_PATH = "assets/PixelifySans-VariableFont_wght.ttf"
+BACKGROUND = 255
+FOREGROUND = 0
+
 # ----- Client -----
 
 RESOLVE_MISSMATCH = False # If config values differ, automatically make them the same
