@@ -3,7 +3,11 @@ try:
     import epaper
 except ImportError as e:
     print("Import failed: ", e)
-from PIL import Image
+
+from gpiozero import Device
+from gpiozero.pins.rpigpio import RPiGPIOFactory
+
+Device.pin_factory = RPiGPIOFactory()
 
 class EInkDisplay:
     def __init__(self):
