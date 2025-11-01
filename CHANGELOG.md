@@ -60,3 +60,4 @@
   - v2.1.3: Fixed error where display module was incorrectly imported
   - v2.1.4: Moved display files into pi/
   - v2.1.5: Added debug
+  - v2.1.6: Changed epaper import to import from epaper module instead of waveshare-epaper
