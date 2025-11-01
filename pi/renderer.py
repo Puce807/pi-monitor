@@ -8,7 +8,7 @@ class Renderer:
         self.layout = Layout()
         self.font = ImageFont.truetype(FONT_PATH, 14)
 
-    def render(self):
+    def render_img(self):
         img = Image.new('1', (250, 122), 255)
         draw = ImageDraw.Draw(img)
 

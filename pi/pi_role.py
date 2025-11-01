@@ -37,8 +37,8 @@ def run_pi():
     start_listener("0.0.0.0", 5007, on_message, 1) # Port is not configurable as it always must be the same as client
 
     display = EInkDisplay()
-    renderer = Renderer
-    display.show_image(image=renderer.render)
+    dis_renderer = Renderer()
+    display.show_image(image=dis_renderer.render_img())
     display.sleep()
 
     # Main loop

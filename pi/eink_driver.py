@@ -3,7 +3,6 @@ try:
     import epaper
 except ImportError as e:
     print("Import failed: ", e)
-from PIL import Image
 
 class EInkDisplay:
     def __init__(self):
