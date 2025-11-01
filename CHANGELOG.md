@@ -62,3 +62,4 @@
   - v2.1.5: Added debug
   - v2.1.6: Changed epaper import to import from epaper module instead of waveshare-epaper
   - v2.1.7: Fix: Instantiated Renderer
+  - v2.1.8: Fix: Added size parameter to render_img

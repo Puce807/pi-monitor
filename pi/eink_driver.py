@@ -13,6 +13,9 @@ class EInkDisplay:
     def show_image(self, image):
         self.epd.display(self.epd.getbuffer(image))
 
+    def get_dimensions(self):
+        return self.epd.height, self.epd.width
+
     def clear(self):
         self.epd.clear(0xFF)
 

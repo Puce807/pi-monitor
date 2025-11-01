@@ -8,8 +8,8 @@ class Renderer:
         self.layout = Layout()
         self.font = ImageFont.truetype(FONT_PATH, 14)
 
-    def render_img(self):
-        img = Image.new('1', (250, 122), 255)
+    def render_img(self, size):
+        img = Image.new('1', size, 255)
         draw = ImageDraw.Draw(img)
 
         draw.text(self.layout.hello_label, "Hello World!", font=self.font, fill=0)
