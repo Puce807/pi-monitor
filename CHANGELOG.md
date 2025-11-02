@@ -68,3 +68,4 @@
   - v2.2.2: Fix: Corrected clearing code in eink_driver.py
   - v2.2.3: Fix: Corrected key names in renderer.py
   - v2.2.4: Fix: Corrected key names in utilization.py
+  - v2.2.5: Fix: Corrected key names for disk in utilization.py
