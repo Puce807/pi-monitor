@@ -63,3 +63,4 @@
   - v2.1.6: Changed epaper import to import from epaper module instead of waveshare-epaper
   - v2.1.7: Fix: Instantiated Renderer
   - v2.1.8: Fix: Added size parameter to render_img
+- v2.2: Feature: Added basic CPU, RAM, disk and network metrics to display

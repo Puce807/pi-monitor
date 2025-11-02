@@ -17,7 +17,7 @@ POLLING_RATE = 3 # How often the Pi pings and fetches information from the clien
 
 # --- Display ---
 
-FONT_PATH = "assets/PixelifySans-VariableFont_wght.ttf"
+FONT_PATH = "assets/Monocraft.ttc"
 BACKGROUND = 255
 FOREGROUND = 0
 

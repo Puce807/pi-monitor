@@ -39,6 +39,7 @@ def run_pi():
     display = EInkDisplay()
     height, width = display.get_dimensions()
     dis_renderer = Renderer()
+    display.clear()
     display.show_image(image=dis_renderer.render_img((height, width)))
     display.sleep()
 
