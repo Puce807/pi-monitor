@@ -67,3 +67,4 @@
   - v2.2.1: Fix: Added get_data to Renderer class
   - v2.2.2: Fix: Corrected clearing code in eink_driver.py
   - v2.2.3: Fix: Corrected key names in renderer.py
+  - v2.2.4: Fix: Corrected key names in utilization.py

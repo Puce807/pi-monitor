@@ -18,7 +18,7 @@ def get_disk():
 def get_network():
     # Returns bytes sent, bytes received, incoming packets dropped and outgoing packets dropped in a dictionary
     net = psutil.net_io_counters()
-    return dict(sent=net.bytes_sent, recv=net.bytes_recv, dropin=net.dropin, dropout=net.dropout)
+    return dict(bytes_sent=net.bytes_sent, bytes_recv=net.bytes_recv, dropin=net.dropin, dropout=net.dropout)
 
 def get_all():
     # Returns CPU, Memory, Disk and Network utilization stats
