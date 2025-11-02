@@ -30,6 +30,8 @@ class Renderer:
         img = Image.new('1', size, 255)
         draw = ImageDraw.Draw(img)
 
+        self.get_data()
+
         draw.text(self.layout.cpu_label, f"CPU:  {self.cpu}%", font=self.font, fill=0)
         draw.text(self.layout.ram_label, f"RAM:  {self.ram}%", font=self.font, fill=0)
         draw.text(self.layout.sent_label, f"Sent: {self.sent}b", font=self.font, fill=0)
