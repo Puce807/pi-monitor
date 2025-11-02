@@ -21,8 +21,8 @@ class Renderer:
         data = get_all()
         self.cpu = data["cpu"]["percent"]
         self.ram = data["ram"]["percent"]
-        self.sent = data["net"]["bytes_sent"]
-        self.recv = data["net"]["bytes_recv"]
+        self.sent = data["net"]["sent"]
+        self.recv = data["net"]["recv"]
         self.disk_used = bytes_gigabytes(data["net"]["used"])
         self.disk_total = bytes_gigabytes(data["net"]["total"])
 
