@@ -72,3 +72,4 @@
   - v2.2.6: Fix: Simplified data dict in utilization.py
   - v2.2.7: Fix: Renamed keys in get_disk()
   - v2.2.8: Fix: Renamed values in get_data()
+  - v2.2.9: Fix: Converted sent and recv (bytes) to megabytes to fit on display

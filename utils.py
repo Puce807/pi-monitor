@@ -7,6 +7,9 @@ from config import AUTO_CORRECT_CONFIG
 def bytes_gigabytes(byte):
     return byte // 1000000000
 
+def bytes_megabytes(byte):
+    return byte // 1000000
+
 def is_pi():
     path = os.path.exists("/sys/firmware/devicetree/base/model")
     return ("raspberrypi" in platform.uname().node.lower()

@@ -3,7 +3,7 @@ from PIL import Image, ImageDraw, ImageFont
 from pi.layout import Layout
 from config import *
 from client.utilization import get_all
-from utils import bytes_gigabytes
+from utils import bytes_gigabytes, bytes_megabytes
 
 class Renderer:
     def __init__(self):
@@ -21,8 +21,8 @@ class Renderer:
         data = get_all()
         self.cpu = data["cpu"]["percent"]
         self.ram = data["ram"]["percent"]
-        self.sent = data["net"]["bytes_sent"]
-        self.recv = data["net"]["bytes_recv"]
+        self.sent = bytes_megabytes(data["net"]["bytes_sent"])
+        self.recv = bytes_megabytes(data["net"]["bytes_recv"])
         self.disk_used = bytes_gigabytes(data["disk"]["d_used"])
         self.disk_total = bytes_gigabytes(data["disk"]["d_total"])
 
@@ -34,8 +34,8 @@ class Renderer:
 
         draw.text(self.layout.cpu_label, f"CPU:  {self.cpu}%", font=self.font, fill=0)
         draw.text(self.layout.ram_label, f"RAM:  {self.ram}%", font=self.font, fill=0)
-        draw.text(self.layout.sent_label, f"Sent: {self.sent}b", font=self.font, fill=0)
-        draw.text(self.layout.recv_label, f"Recv: {self.recv}b", font=self.font, fill=0)
+        draw.text(self.layout.sent_label, f"Sent: {self.sent}MB", font=self.font, fill=0)
+        draw.text(self.layout.recv_label, f"Recv: {self.recv}MB", font=self.font, fill=0)
         draw.text(self.layout.disk_label, f"Disk: {self.disk_used}GB/{self.disk_total}GB", font=self.font, fill=0)
 
         draw.rectangle(self.layout.disk_full_coords, fill=0)
