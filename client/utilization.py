@@ -13,7 +13,7 @@ def get_memory():
 def get_disk():
     # Returns total disk usage %, total disk, used disk space, free disk space in a dictionary - Bytes
     disk = psutil.disk_usage("/")
-    return dict(percent=disk.percent, total=disk.total, used=disk.used, free=disk.free)
+    return dict(percent=disk.percent, total=disk.total, d_used=disk.used, d_free=disk.free)
 
 def get_network():
     # Returns bytes sent, bytes received, incoming packets dropped and outgoing packets dropped in a dictionary
