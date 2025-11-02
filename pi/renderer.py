@@ -23,8 +23,8 @@ class Renderer:
         self.ram = data["ram"]["percent"]
         self.sent = data["net"]["bytes_sent"]
         self.recv = data["net"]["bytes_recv"]
-        self.disk_used = bytes_gigabytes(data["net"]["disk_used"])
-        self.disk_total = bytes_gigabytes(data["net"]["disk_total"])
+        self.disk_used = bytes_gigabytes(data["disk"]["used"])
+        self.disk_total = bytes_gigabytes(data["disk"]["total"])
 
     def render_img(self, size):
         img = Image.new('1', size, 255)

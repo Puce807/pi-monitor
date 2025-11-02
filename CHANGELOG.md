@@ -69,3 +69,4 @@
   - v2.2.3: Fix: Corrected key names in renderer.py
   - v2.2.4: Fix: Corrected key names in utilization.py
   - v2.2.5: Fix: Corrected key names for disk in utilization.py
+  - v2.2.6: Fix: Simplified data dict in utilization.py
