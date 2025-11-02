@@ -65,3 +65,4 @@
   - v2.1.8: Fix: Added size parameter to render_img
 - v2.2: Feature: Added basic CPU, RAM, disk and network metrics to display
   - v2.2.1: Fix: Added get_data to Renderer class
+  - v2.2.2: Fix: Corrected clearing code in eink_driver.py

@@ -17,7 +17,7 @@ class EInkDisplay:
         return self.epd.height, self.epd.width
 
     def clear(self):
-        self.epd.clear(0xFF)
+        self.epd.Clear(0xFF)
 
     def sleep(self):
         self.epd.sleep()
