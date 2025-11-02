@@ -73,3 +73,4 @@
   - v2.2.7: Fix: Renamed keys in get_disk()
   - v2.2.8: Fix: Renamed values in get_data()
   - v2.2.9: Fix: Converted sent and recv (bytes) to megabytes to fit on display
+  - v2.2.9: Fix: Converted sent and recv (megabytes) to gigabytes to fit on display
