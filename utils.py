@@ -1,4 +1,5 @@
 
+import time
 import platform, os
 import subprocess
 
@@ -39,6 +40,8 @@ def update_git():
         print("Pull complete")
     else:
         print("Local repo up-to-date")
+
+    time.sleep(1)
 
 def validate_value(value, default, valid_options=None, valid_range=None):
     if valid_options is not None:

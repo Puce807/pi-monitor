@@ -57,6 +57,7 @@ def run_pi():
             display.clear()
             display.show_image(image=dis_renderer.render_img((height, width)))
             display.sleep()
+        i += 1
 
         try:
             pass

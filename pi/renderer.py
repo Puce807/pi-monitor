@@ -9,7 +9,7 @@ class Renderer:
     def __init__(self):
         self.layout = Layout()
         self.font = ImageFont.truetype(FONT_PATH, 14)
-        self.small_font = ImageFont.truetype("../assets/Monocraft.ttc", 14)
+        self.small_font = ImageFont.truetype(FONT_PATH, 14)
 
         self.cpu = None
         self.ram = None
