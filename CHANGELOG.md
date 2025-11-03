@@ -77,3 +77,4 @@
 - v2.3: Feature: Added disk progress bar, pi now displays client data, added "data not found" error to display
   - v2.3.1: Fix: Removed request line in pi_role.py as client would not be serving at that time
   - v2.3.2: Fix: Corrected font path and added wait between updating git and running code
+  - v.2.3.3: Fix: Corrected data size conversion
