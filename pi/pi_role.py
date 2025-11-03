@@ -36,9 +36,11 @@ def run_pi():
     print(f"UDP Port: {UDP_PORT}")
     start_listener("0.0.0.0", 5007, on_message, 1) # Port is not configurable as it always must be the same as client
 
+    data = requests.get(f"http://{CLIENT_IP}:{DATA_PORT}").json()
     display = EInkDisplay()
     height, width = display.get_dimensions()
     dis_renderer = Renderer()
+    dis_renderer.give_data(data)
     display.clear()
     display.show_image(image=dis_renderer.render_img((height, width)))
     display.sleep()
