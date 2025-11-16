@@ -77,8 +77,9 @@
 - v2.3: Feature: Added disk progress bar, pi now displays client data, added "data not found" error to display
   - v2.3.1: Fix: Removed request line in pi_role.py as client would not be serving at that time
   - v2.3.2: Fix: Corrected font path and added wait between updating git and running code
-  - v.2.3.3: Fix: Corrected data size conversion
+  - v2.3.3: Fix: Corrected data size conversion
   - v2.3.4: Feature: Refactored code so display updating runs in thread
     - Feature: Implemented data queue
     - Feature: 'run_display' runs in a thread
     - Fix: Prevents timeout form E-Ink display sleep
+  - v2.3.5: Feature: Implemented TIMEOUT_THRESH - how long the client waits to send warning messages after last ping

@@ -7,7 +7,7 @@ from pi.pi_role import run_pi
 if __name__ == "__main__":
 
     if update_git(): update_git()
-    ROLE, POLLING_RATE, TIMEOUT = validate_config(ROLE, POLLING_RATE, TIMEOUT)
+    ROLE, POLLING_RATE, TIMEOUT = validate_config(ROLE, POLLING_RATE, TIMEOUT_LIM, TIMEOUT_THRESH)
 
     if ROLE == "auto":
         val, path = is_pi()

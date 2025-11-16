@@ -1,7 +1,7 @@
 
 import time
 import config
-from config import TIMEOUT, AUTO_RECONNECT
+from config import TIMEOUT_LIM, TIMEOUT_THRESH, AUTO_RECONNECT
 from network import start_listener, send_message
 from client.flask_handler import FlaskThread
 from client.ping_handler import PingHandler
@@ -48,7 +48,7 @@ def run_client():
                 flask_thread = FlaskThread(ping.stop_event)
                 flask_thread.start()
 
-            if elapsed > TIMEOUT:
+            if elapsed > TIMEOUT_LIM:
                 print("Lost connection. Terminating program...")
                 connected = False
             elif elapsed > 7:

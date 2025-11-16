@@ -13,7 +13,7 @@ DATA_PORT = 5000 # Port used by the flask server
 
 # ----- Pi -----
 
-POLLING_RATE = 3 # How often the Pi pings and fetches information from the client
+POLLING_RATE = 5 # How often the Pi pings and fetches information from the client
 DATA_TIMEOUT = 0.5 # How long the PI should wait for new data in the queue before moving on
 
 # --- Display ---
@@ -25,5 +25,6 @@ FOREGROUND = 0
 # ----- Client -----
 
 RESOLVE_MISSMATCH = False # If config values differ, automatically make them the same
-TIMEOUT = 20 # How many seconds after the last ping the client will terminate the script
+TIMEOUT_LIM = 25 # How many seconds after the last ping the client will terminate the script
+TIMEOUT_THRESH = 16 # How many seconds after the last ping the client will print a warning to terminal
 AUTO_RECONNECT = True # Should the listener start again once the pi has disconnected
