@@ -12,6 +12,7 @@ def on_message(data="", addr=""):
     if typ == "MSG":
         print(f"Ping from {ip}:{port} - {data}")
     elif typ == "DATA":
+        # Validate Config
         piUDP, piPING, piDATA = content
         if not (config.UDP_PORT == piUDP and config.PING_PORT == piPING and config.DATA_PORT == piDATA):
             if config.RESOLVE_MISSMATCH:
