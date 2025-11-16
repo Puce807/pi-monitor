@@ -83,3 +83,4 @@
     - Feature: 'run_display' runs in a thread
     - Fix: Prevents timeout form E-Ink display sleep
   - v2.3.5: Feature: Implemented TIMEOUT_THRESH - how long the client waits to send warning messages after last ping
+  - v2.3.6: Fix: Added TIMEOUT_THRESH to validate config
